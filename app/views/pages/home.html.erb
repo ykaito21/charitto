@@ -1,2 +1,69 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<!-- banner -->
+<section>
+  <div class="banner">
+    <div class="banner-content text-center">
+      <h1>Charitto</h1>
+      <p>寄付でチャリット世界を<i class="fas fa-frog"></i></p>
+      <%= link_to "はじめる", new_user_registration_path, class: "btn btn-red"  %>
+    </div>
+  </div>
+</section>
+
+<!-- about -->
+<section class="ch-about">
+  <div class="container">
+    <div class="row">
+      <div>
+        <h3>Charittoとは</h3>
+        <hr>
+          <p>
+          日常生活での寄付を可能にする、寄付プラットフォームです。
+          </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- service -->
+<section class="ch-service">
+  <div class="container">
+    <div class="row">
+      <div class>
+        <h3>使い方</h3>
+        <hr>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3 col-md-6">
+        <div>
+          <i class="fas fa-4x fa-search"></i>
+          <h2>探す</h2>
+          <p>あなたに合ったお得なキャンペーンを探します。</p>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <div>
+          <i class="fas fa-4x fa-shopping-cart"></i>
+          <h2>購入</h2>
+          <p>キャンペーンを購入してポイントをゲット!</p>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <div>
+          <i class="fas fa-4x fa-calendar-check"></i>
+          <h2>利用</h2>
+          <p>お得なキャンペーンを使って楽しむ！</p>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <div>
+          <i class="fas fa-4x fa-hand-holding-heart"></i>
+          <h2>寄付</h2>
+          <p>得たポイントを自分の気になる団体に寄付する。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,1 +1,51 @@
-// Specific CSS for your home-page
+.ch-about {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: white;
+  text-align: center;
+  h3 {
+    color: $navy;
+    font-size: 32px;
+    margin-top: 40px;
+  }
+  p {
+    color: black;
+    font-size: 24px;
+    font-weight: lighter;
+    margin-bottom: 25px;
+  }
+  hr {
+    border-top: 1px solid $light-gray;
+  }
+}
+
+
+.ch-service {
+  justify-content: space-around;
+  align-items: center;
+  background-color: $light-gray;
+  text-align: center;
+  h3 {
+    color: $navy;
+    font-weight: bold;
+    font-size: 32px;
+    margin-top: 40px;
+  }
+  i {
+    color: $green;
+    margin: 10px
+
+
+  }
+  h2 {
+    color: $orange;
+    font-size: 24px;
+  }
+  p {
+    color: black;
+    font-size: 16px;
+    font-weight: lighter;
+    margin: 25px;
+  }
+}
