@@ -1,22 +1,12 @@
 <div class="container">
   <div class="row">
     <%= @organization.name %>
-  </div>
-</div>
-
-
-<div class="container">
-  <div class="row">
-    <% @campaigns.each do |campaign| %>
-      <div class="col-xs-12 col-sm-4">
-        <%= link_to campaign_path(campaign) do %>
-        <div class="card">
-          <div class="card-description">
-            <h2><%= campaign.name %></h2>
-          </div>
-        </div>
-        <% end %>
-      </div>
+    <% if policy(@organization).update? %>
+      <%= link_to "変更 |", edit_organization_path(@organization), class: "" %>
+      <%= link_to "削除", organization_path(@organization), class: "", method: :delete, data: { confirm: "削除しますか？" }  %>
     <% end %>
   </div>
 </div>
+
+
+

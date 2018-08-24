@@ -2,7 +2,7 @@ class OrganizationsController < ApplicationController
   before_action :set_organization, only: [ :show, :edit, :update, :destroy ]
 
   def index
-    @organizations = Organization.all
+    @organizations = policy_scope(Organization).order(created_at: :desc)
   end
 
   def show
@@ -10,11 +10,13 @@ class OrganizationsController < ApplicationController
 
   def new
     @organization = Organization.new
+    authorize @organization
   end
 
   def create
     @organization = Organization.new(organization_params)
     @organization.user = current_user
+    authorize @organization
     if @organization.save
       redirect_to organization_path(@organization)
     else
@@ -23,6 +25,9 @@ class OrganizationsController < ApplicationController
   end
 
   def edit
+  end
+
+  def update
     if @organization.update(organization_params)
       redirect_to organization_path(@organization)
     else
@@ -30,10 +35,9 @@ class OrganizationsController < ApplicationController
     end
   end
 
-  def update
-  end
-
   def destroy
+    @organization.destroy
+    redirect_to root_path
   end
 
   private
@@ -44,6 +48,7 @@ class OrganizationsController < ApplicationController
 
   def set_organization
     @organization = Organization.find(params[:id])
+    authorize @organization
   end
 
 end

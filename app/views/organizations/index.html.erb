@@ -1,11 +1,16 @@
 <div class="container">
   <div class="row">
     <% @organizations.each do |organization| %>
-      <div class="col-xs-12 col-sm-4">
+      <div class="col-xs-6 col-sm-4">
         <%= link_to organization_path(organization) do %>
         <div class="card">
-          <div class="card-description">
-            <h2><%= organization.name %></h2>
+          <%= cl_image_tag("s_003o", class: "card-img") %>
+          <div class="card-content">
+            <h1 class="card-title"><%= organization.name %></h1>
+            <p class="card-text"><%= organization.name %></p>
+          </div>
+          <div class="card-link">
+            <%= link_to "詳しく", organization_path(organization), class: "btn btn-orange"  %>
           </div>
         </div>
         <% end %>
