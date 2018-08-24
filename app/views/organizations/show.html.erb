@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <%= @organization.name %>
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="row">
+    <% @campaigns.each do |campaign| %>
+      <div class="col-xs-12 col-sm-4">
+        <%= link_to campaign_path(campaign) do %>
+        <div class="card">
+          <div class="card-description">
+            <h2><%= campaign.name %></h2>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -1,5 +1,5 @@
 class OrganizationsController < ApplicationController
-  before_action :set_restaurant, only: [ :show, :edit, :update, :destroy ]
+  before_action :set_organization, only: [ :show, :edit, :update, :destroy ]
 
   def index
     @organizations = Organization.all
@@ -13,7 +13,7 @@ class OrganizationsController < ApplicationController
   end
 
   def create
-    @organization = Organization.new
+    @organization = Organization.new(organization_params)
     @organization.user = current_user
     if @organization.save
       redirect_to organization_path(@organization)
