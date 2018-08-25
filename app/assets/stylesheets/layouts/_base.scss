@@ -1,0 +1,40 @@
+.wrapper {
+  display: flex;
+  height: 300px;
+  color: $navy;
+
+  > * {
+    flex: 1;
+    margin: 40px 10px 0px;
+  }
+}
+
+.base-img {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.img-siz {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px #ccc;
+}
+
+.base-info {
+  display: flex;
+  flex-direction: column;
+  > * {
+    flex: 1;
+  }
+}
+
+.base-name {
+  padding: 20px;
+}
+
+.base-des {
+  flex: 2;
+  padding: 20px;
+}

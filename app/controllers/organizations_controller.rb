@@ -6,6 +6,7 @@ class OrganizationsController < ApplicationController
   end
 
   def show
+    @organizations = policy_scope(Organization).order(created_at: :desc)
   end
 
   def new
