@@ -10,10 +10,10 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to "キャンペーン", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "レストラン", organizations_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "キャンペーン", campaigns_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "企業＆サポーター", organizations_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <% if policy(Organization).create? %>
-      <%= link_to "レストラン登録", new_organization_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "企業＆サポーター登録", new_organization_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <% end %>
 
       <!-- Avatar with dropdown menu -->
@@ -41,8 +41,8 @@
       </div>
     <% else %>
       <!-- Login link (when logged out) -->
-      <%= link_to t(".sign_in", default: "企業・サポーター登録"), new_user_session_path, class: "nav-link" %>
-      <%= link_to t(".sign_in", default: "NPOの登録"), new_user_session_path, class: "nav-link" %>
+      <%= link_to t(".sign_in", default: "企業＆サポーター登録"), new_user_session_path, class: "nav-link" %>
+      <%= link_to t(".sign_in", default: "ＮＰＯ＆ＮＧＯ登録"), new_user_session_path, class: "nav-link" %>
       <%= link_to t(".sign_in", default: "ログイン"), new_user_session_path, class: "btn-green" %>
     <% end %>
   </div>
@@ -53,8 +53,8 @@
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
         <li><%= link_to t(".sign_in", default: "ログイン"), new_user_session_path %></li>
-        <li><%= link_to t(".sign_in", default: "企業・サポーター登録"), new_user_session_path %></li>
-        <li><%= link_to t(".sign_in", default: "NPOの登録"), new_user_session_path %></li>
+        <li><%= link_to t(".sign_in", default: "企業＆サポーター登録"), new_user_session_path %></li>
+        <li><%= link_to t(".sign_in", default: "ＮＰＯ＆ＮＧＯ登録"), new_user_session_path %></li>
         <li><%= link_to t(".sign_in", default: "Charittoとは"), new_user_session_path %></li>
       </ul>
     </div>

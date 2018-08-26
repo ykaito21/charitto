@@ -11,6 +11,12 @@
     <div class="col-sm-12 col-md-6">
       <p>Some awesome description.</p>
       <p>値段：<%= humanized_money_with_symbol(@campaign.price) %></p>
+
+
+      <%= form_tag orders_path do %>
+        <%= hidden_field_tag 'campaign_id', @campaign.id %>
+        <%= submit_tag '購入', class: 'btn btn-orange' %>
+      <% end %>
     </div>
   </div>
 </div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_26_033123) do
+ActiveRecord::Schema.define(version: 2018_08_26_122000) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,18 @@ ActiveRecord::Schema.define(version: 2018_08_26_033123) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["organization_id"], name: "index_campaigns_on_organization_id"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.string "state"
+    t.string "campaign_sku"
+    t.integer "amount_cents", default: 0, null: false
+    t.string "amount_currency", default: "JPY", null: false
+    t.jsonb "payment"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "organizations", force: :cascade do |t|
@@ -53,5 +65,6 @@ ActiveRecord::Schema.define(version: 2018_08_26_033123) do
   end
 
   add_foreign_key "campaigns", "organizations"
+  add_foreign_key "orders", "users"
   add_foreign_key "organizations", "users"
 end
