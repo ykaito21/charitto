@@ -1,4 +1,5 @@
 class OrganizationsController < ApplicationController
+  skip_before_action :authenticate_user!
   before_action :set_organization, only: [ :show, :edit, :update, :destroy ]
 
   def index
@@ -43,13 +44,13 @@ class OrganizationsController < ApplicationController
 
   private
 
-  def organization_params
-    params.require(:organization).permit(:name)
-  end
+    def organization_params
+      params.require(:organization).permit(:name)
+    end
 
-  def set_organization
-    @organization = Organization.find(params[:id])
-    authorize @organization
-  end
+    def set_organization
+      @organization = Organization.find(params[:id])
+      authorize @organization
+    end
 
 end

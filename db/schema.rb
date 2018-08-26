@@ -10,10 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_18_092001) do
+ActiveRecord::Schema.define(version: 2018_08_26_033123) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "campaigns", force: :cascade do |t|
+    t.string "sku"
+    t.string "name"
+    t.string "image_url"
+    t.integer "price_cents", default: 0, null: false
+    t.string "price_currency", default: "JPY", null: false
+    t.bigint "organization_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["organization_id"], name: "index_campaigns_on_organization_id"
+  end
 
   create_table "organizations", force: :cascade do |t|
     t.string "name"
@@ -40,5 +52,6 @@ ActiveRecord::Schema.define(version: 2018_08_18_092001) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "campaigns", "organizations"
   add_foreign_key "organizations", "users"
 end
