@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 puts 'Cleaning database...'
+Order.destroy_all
 Campaign.destroy_all
 Organization.destroy_all
 User.destroy_all
