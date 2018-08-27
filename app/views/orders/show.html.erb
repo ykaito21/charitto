@@ -1,10 +1,14 @@
 <div class="container">
   <div class="row">
-    <h1>Order</h1>
-    <ul>
-      <li>Status: <%= @order.state %></li>
-      <li>Item: <%= @order.campaign_sku %></li>
-      <li>Amount: <%= humanized_money_with_symbol(@order.amount) %></li>
-    <ul>
+      <div class="col-xs-12 col-sm-12">
+        <h1>オーダー</h1>
+        <div class="card">
+          <div class="card-content">
+            <h1 class="card-title">Status: <%= @order.state %></h1>
+            <p class="card-text">Item: <%= @order.campaign_sku %></p>
+            <p class="card-text">Amount: <%= humanized_money_with_symbol(@order.amount) %></p>
+          </div>
+        </div>
+      </div>
   </div>
 </div>

@@ -3,6 +3,8 @@ class PaymentsController < ApplicationController
 
   def new
     authorize @order
+    @campaign = Campaign.find_by(params[:campaign_sku])
+    authorize @campaign
   end
 
   def create

@@ -1,22 +1,26 @@
 <div class="container">
   <div class="row">
-    <div class="col-sm-12">
-      <h1><%= @campaign.name %></h1>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-sm-12 col-md-6">
-      <%= image_tag(@campaign.image_url, width: '100%') %>
-    </div>
-    <div class="col-sm-12 col-md-6">
-      <p>Some awesome description.</p>
-      <p>値段：<%= humanized_money_with_symbol(@campaign.price) %></p>
+    <div class="wrapper">
+      <div class="base-img">
+        <%= image_tag(@campaign.image_url, width: '70%') %>
+      </div>
+      <div class="base-info">
+        <div class="base-name">
+          <%= @campaign.name %>
+        </div>
+        <div class="base-des">
+          <p>Some awesome description.</p>
+          <p>値段：<%= humanized_money_with_symbol(@campaign.price) %></p>
 
 
-      <%= form_tag orders_path do %>
-        <%= hidden_field_tag 'campaign_id', @campaign.id %>
-        <%= submit_tag '購入', class: 'btn btn-orange' %>
-      <% end %>
+          <%= form_tag orders_path do %>
+            <%= hidden_field_tag 'campaign_id', @campaign.id %>
+            <%= submit_tag '購入', class: 'btn btn-orange' %>
+          <% end %>
+        </div>
+      </div>
     </div>
   </div>
 </div>
+
+
