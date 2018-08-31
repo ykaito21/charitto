@@ -5,6 +5,7 @@ class CampaignsController < ApplicationController
 
   def index
     @campaigns = policy_scope(Campaign).order(created_at: :desc)
+    #campaigns.where(start_date < now < end_date)
   end
 
   def show

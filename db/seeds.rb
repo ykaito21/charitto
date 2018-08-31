@@ -13,17 +13,42 @@ Organization.destroy_all
 User.destroy_all
 
 puts 'Creating users...'
-sato = User.create!(email: "sato@example.com",
+starbucks = User.create!(email: "starbucks@example.com",
   password: "password")
-jiro = User.create!(email: "jiro@example.com",
+hulu = User.create!(email: "hulu@example.com",
+  password: "password")
+donqui = User.create!(email: "donqui@example.com",
+  password: "password")
+uniqlo = User.create!(email: "uniqlo@example.com",
+  password: "password")
+konika = User.create!(email: "konika@example.com",
+  password: "password")
+ichiran = User.create!(email: "ichiran@example.com",
   password: "password")
 
 puts 'Creating organizations...'
-restaurant_sato = Organization.create!(name: 'レストラン佐藤', user: sato)
-npo_jiro = Organization.create!(name: 'ＮＰＯ次郎', user: jiro)
+starbucks_o = Organization.create!(name: 'Starbucks Coffee Japan', user: starbucks)
+hulu_o = Organization.create!(name: 'Hulu', user: hulu)
+donqui_o = Organization.create!(name: 'ドン・キホーテグループ', user: donqui)
+uniqlo_o = Organization.create!(name: 'UNIQLO', user: uniqlo)
+konika_o = Organization.create!(name: 'コニカミノルタプラネタリウム', user: konika)
+ichiran_o = Organization.create!(name: '一蘭', user: ichiran)
+
+# sku = Array.new(3) { SecureRandom.urlsafe_base64 }
 
 puts 'Creating campaigns...'
-Campaign.create!(sku: 'campaign_1', name: 'ビール券', image_url: 'http://res.cloudinary.com/dgugqcsvk/image/upload/v1535255430/pixta_16804929_M.jpg', price: 500, organization: restaurant_sato)
-Campaign.create!(sku: 'campaign_2', name: '１０００円食事券', image_url: 'http://res.cloudinary.com/dgugqcsvk/image/upload/v1535255263/eb9bd487c6135d7a01b8484d556a248f.png', price: 1000, organization: restaurant_sato)
-Campaign.create!(sku: 'campaign_3', name: '２００円寄付', image_url: 'http://res.cloudinary.com/dgugqcsvk/image/upload/v1535255307/E5_AF_84_E4_BB_98_E9_87_91_E6_8E_A7_E9_99_A4_E7_AD_89__E9_A0_98_E5_8F_8E_E8_A8_BC.jpg', price: 200, organization: npo_jiro)
+Campaign.create!(sku: SecureRandom.urlsafe_base64, name: 'ドリンクチケット（500円）', image_url: 'http://res.cloudinary.com/dgugqcsvk/image/upload/v1535703024/item_48.jpg', price: 500, organization: starbucks_o)
+Campaign.create!(sku: SecureRandom.urlsafe_base64, name: 'ドリンクチケット（1000円）', image_url: 'http://res.cloudinary.com/dgugqcsvk/image/upload/v1535703024/item_48.jpg', price: 1000, organization: starbucks_o)
+Campaign.create!(sku: SecureRandom.urlsafe_base64, name: 'Huluチケット（1ヶ月）', image_url: 'http://res.cloudinary.com/dgugqcsvk/image/upload/v1535705975/huluticket_1_640_re1.jpg', price: 1007, organization: hulu_o)
+Campaign.create!(sku: SecureRandom.urlsafe_base64, name: 'Huluチケット（3ヶ月）', image_url: 'http://res.cloudinary.com/dgugqcsvk/image/upload/v1535706269/huluticket_3_640_re1.jpg', price: 1007, organization: hulu_o)
+Campaign.create!(sku: SecureRandom.urlsafe_base64, name: 'ドン・キホーテグループmajicaギフト券', image_url: 'http://res.cloudinary.com/dgugqcsvk/image/upload/v1535706511/donqui_300.jpg', price: 300, organization: donqui_o)
+Campaign.create!(sku: SecureRandom.urlsafe_base64, name: 'ドン・キホーテグループmajicaギフト券', image_url: 'http://res.cloudinary.com/dgugqcsvk/image/upload/v1535706526/donqui_500.jpg', price: 500, organization: donqui_o)
+Campaign.create!(sku: SecureRandom.urlsafe_base64, name: 'ドン・キホーテグループmajicaギフト券', image_url: 'http://res.cloudinary.com/dgugqcsvk/image/upload/v1535706535/donqui_1000.jpg', price: 1000, organization: donqui_o)
+Campaign.create!(sku: SecureRandom.urlsafe_base64, name: 'ドン・キホーテグループmajicaギフト券', image_url: 'http://res.cloudinary.com/dgugqcsvk/image/upload/v1535706518/donqui_3000.jpg', price: 3000, organization: donqui_o)
+Campaign.create!(sku: SecureRandom.urlsafe_base64, name: 'ユニクロギフトカード（1000円）', image_url: 'http://res.cloudinary.com/dgugqcsvk/image/upload/v1535707312/170828-scene03.jpg', price: 1000, organization: uniqlo_o)
+Campaign.create!(sku: SecureRandom.urlsafe_base64, name: 'ユニクロギフトカード（3000円）', image_url: 'http://res.cloudinary.com/dgugqcsvk/image/upload/v1535707312/170828-scene03.jpg', price: 3000, organization: uniqlo_o)
+Campaign.create!(sku: SecureRandom.urlsafe_base64, name: 'シングル　プラネタリウムチケット', image_url: 'http://res.cloudinary.com/dgugqcsvk/image/upload/v1535707835/kmp_single.jpg', price: 1700, organization: konika_o)
+Campaign.create!(sku: SecureRandom.urlsafe_base64, name: 'ペア　プラネタリウムチケット', image_url: 'http://res.cloudinary.com/dgugqcsvk/image/upload/v1535707823/kmp_Pair.jpg', price: 3400, organization: konika_o)
+Campaign.create!(sku: SecureRandom.urlsafe_base64, name: 'ラーメン1杯', image_url: 'http://res.cloudinary.com/dgugqcsvk/image/upload/v1535708154/menu-menu_main01.png', price: 890, organization: ichiran_o)
+
 puts 'Finished!'

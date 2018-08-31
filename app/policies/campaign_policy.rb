@@ -5,6 +5,10 @@ class CampaignPolicy < ApplicationPolicy
     end
   end
 
+  def index?
+    true
+  end
+
   def new?
     true
   end

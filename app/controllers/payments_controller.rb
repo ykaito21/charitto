@@ -1,11 +1,11 @@
 class PaymentsController < ApplicationController
   before_action :set_order
 
-  def new
-    authorize @order
-    @campaign = Campaign.find_by(params[:campaign_sku])
-    authorize @campaign
-  end
+  # def new
+  #   authorize @order
+  #   @campaign = Campaign.find_by(params[:campaign_sku])
+  #   authorize @campaign
+  # end
 
   def create
     authorize @order

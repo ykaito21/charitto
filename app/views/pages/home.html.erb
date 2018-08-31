@@ -3,7 +3,7 @@
   <div class="banner">
     <div class="banner-content text-center">
       <h1>Charitto</h1>
-      <p>寄付でチャリット世界を<i class="fas fa-frog"></i></p>
+      <p>寄付でチャリット世界を<%= image_tag "logo.svg", height: 50 %></p>
       <%= link_to "はじめる", new_user_registration_path, class: "btn btn-orange"  %>
     </div>
   </div>
@@ -42,7 +42,8 @@
           <i class="fas fa-4x fa-search"></i>
           <h2>探す</h2>
           <p>
-          商品や食事券の購入、ホテルやアクティビティの予約などあなたに合ったお得なキャンペーンを探します。</p>
+          商品の購入からホテルの予約まで<br>
+          あなたに合ったお得なキャンペーンを探します。</p>
         </div>
       </div>
       <div class="col-lg-3 col-md-6">
