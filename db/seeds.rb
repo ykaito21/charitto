@@ -27,12 +27,30 @@ ichiran = User.create!(email: "ichiran@example.com",
   password: "password")
 
 puts 'Creating organizations...'
-starbucks_o = Organization.create!(name: 'Starbucks Coffee Japan', user: starbucks)
-hulu_o = Organization.create!(name: 'Hulu', user: hulu)
-donqui_o = Organization.create!(name: 'ドン・キホーテグループ', user: donqui)
-uniqlo_o = Organization.create!(name: 'UNIQLO', user: uniqlo)
-konika_o = Organization.create!(name: 'コニカミノルタプラネタリウム', user: konika)
-ichiran_o = Organization.create!(name: '一蘭', user: ichiran)
+starbucks_o = Organization.create!(name: 'Starbucks Coffee Japan',
+                                   user: starbucks,
+                                  description: '1971年、スターバックスはアメリカ北西部のシアトルにコーヒー豆の専門店として誕生しました。現在では世界各国の街角で一杯のコーヒーとともにくつろぎのひとときをご提供しています。',
+                                  remote_org_image_url: 'http://res.cloudinary.com/dgugqcsvk/image/upload/v1535703015/243_starbucks_01.jpg')
+hulu_o = Organization.create!(name: 'Hulu',
+                              user: hulu,
+                              description: 'Huluは40,000本以上の映画・ドラマ・アニメを楽しめるオンライン動画配信サービスです。月額933円（税抜）でいつでも、どこでも、全ての作品が見放題。',
+                              remote_org_image_url: 'http://res.cloudinary.com/dgugqcsvk/image/upload/v1535705968/hulu_logo.jpg')
+donqui_o = Organization.create!(name: 'ドン・キホーテグループ',
+                                user: donqui,
+                                description: '「コンビニエンス＋ディスカウント＋アミューズメント」の三位一体を店舗コンセプトとする総合ディ スカウントストアで、約4～6万点のアイテムを取り揃えています。',
+                                remote_org_image_url: 'http://res.cloudinary.com/dgugqcsvk/image/upload/v1535987821/donqui_brand.jpg')
+uniqlo_o = Organization.create!(name: 'UNIQLO',
+                                user: uniqlo,
+                                description: 'あらゆる人が良いカジュアルを着られるようにする株式会社ユニクロ。あなたにぴったりの1着が見つかる！',
+                                remote_org_image_url: 'http://res.cloudinary.com/dgugqcsvk/image/upload/v1535987298/B9wQNv90_400x400.jpg')
+konika_o = Organization.create!(name: 'コニカミノルタプラネタリウム',
+                                user: konika,
+                                description: '大切な人に星空を―コニカミノルタプラネタリウムは、リラクゼーションやエンターテイメントをお届けする、大人のためのプラネタリウム。',
+                                remote_org_image_url: 'http://res.cloudinary.com/dgugqcsvk/image/upload/v1535987222/kmp_logo.jpg')
+ichiran_o = Organization.create!(name: '一蘭',
+                                user: ichiran,
+                                description: '一蘭は、世界一とんこつラーメンを研究する会社として、これからもお客様が満足してくださる“本場本物”のとんこつラーメンをご提供できるように、しっかりと味を守りながらも、進化し続けてまいります。',
+                                remote_org_image_url:'http://res.cloudinary.com/dgugqcsvk/image/upload/v1535986883/ichiran_logo.jpg')
 
 # sku = Array.new(3) { SecureRandom.urlsafe_base64 }
 

@@ -2,7 +2,7 @@
   <div class="row">
     <div class="wrapper">
       <div class="base-img">
-        <%= cl_image_tag("s_003o", class: "img-siz") %>
+        <%= cl_image_tag @organization.org_image, class: "img-siz" %>
       </div>
       <div class="base-info">
         <div class="base-name">
@@ -13,7 +13,7 @@
           <% end %>
         </div>
         <div class="base-des">
-          This is description
+          <%= @organization.description %>
         </div>
       </div>
     </div>
