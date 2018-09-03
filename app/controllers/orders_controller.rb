@@ -2,12 +2,10 @@ class OrdersController < ApplicationController
 
   def index
     @orders = policy_scope(Order).where(user: current_user).where(state: 'pending').order(created_at: :desc)
-    @campaign = Campaign.find_by(params[:campaign_sku])
-    authorize @campaign
   end
   def create
     campaign = Campaign.find(params[:campaign_id])
-    order  = Order.create!(campaign_sku: campaign.sku, amount: campaign.price, state: 'pending', user: current_user)
+    order  = Order.create!(campaign_sku: campaign.sku, amount: campaign.price, state: 'pending', user: current_user, name: campaign.name, image_url: campaign.image_url)
     authorize order
 
     redirect_to orders_path

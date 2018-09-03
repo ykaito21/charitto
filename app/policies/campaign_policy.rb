@@ -5,11 +5,21 @@ class CampaignPolicy < ApplicationPolicy
     end
   end
 
-  def index?
+  def create?
     true
   end
 
-  def new?
-    true
+  def update?
+    user_is_owner?
+  end
+
+  def destroy?
+    user_is_owner?
+  end
+
+  private
+
+  def user_is_owner?
+    record.user == user
   end
 end

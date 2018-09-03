@@ -4,7 +4,7 @@
     <% @campaigns.each do |campaign| %>
       <div class="col-sm-6 col-md-4">
         <div class="thumbnail">
-          <%= link_to image_tag(campaign.image_url), campaign_path(campaign) %>
+          <%= cl_image_tag campaign.image_url %>
           <div class="caption">
             <h3><%= link_to campaign.name, campaign_path(campaign) %></h3>
             <p><%= campaign.organization.name %></p>

@@ -3,10 +3,11 @@
     <% @orders.each do |order| %>
       <div class="col-xs-6 col-sm-4">
         <div class="card">
-          <%= image_tag(@campaign.image_url, class: "card-img") %>
+          <%= cl_image_tag order.image_url, class: "card-img" %>
           <div class="card-content">
-            <h1 class="card-title"><%= order.state %></h1>
-            <p class="card-text"><%= order.campaign_sku %></p>
+            <h1 class="card-title"><%= order.name %></h1>
+            <!-- <h1 class="card-title"><%= order.state %></h1> -->
+            <!-- <p class="card-text"><%= order.campaign_sku %></p> -->
           </div>
           <div class="card-link">
             <%= form_tag order_payments_path(order) do %>
