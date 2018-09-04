@@ -1,0 +1,8 @@
+<%= simple_form_for [@organization, @campaign] do |f| %>
+  <%= f.hidden_field :sku, value: SecureRandom.urlsafe_base64 %>
+  <%= f.input :name, class: "form-control" %>
+  <%= f.input :camp_image %>
+  <%= f.hidden_field :camp_image_cache %>
+  <%= f.input :price_cents, class: "form-control" %>
+  <%= f.submit "登録", class: "btn btn-orange" %>
+<% end %>

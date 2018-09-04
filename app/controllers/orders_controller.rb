@@ -5,7 +5,7 @@ class OrdersController < ApplicationController
   end
   def create
     campaign = Campaign.find(params[:campaign_id])
-    order  = Order.create!(campaign_sku: campaign.sku, amount: campaign.price, state: 'pending', user: current_user, name: campaign.name, image_url: campaign.image_url)
+    order  = Order.create!(campaign_sku: campaign.sku, amount: campaign.price, state: 'pending', user: current_user, name: campaign.name, order_image: campaign.camp_image)
     authorize order
 
     redirect_to orders_path

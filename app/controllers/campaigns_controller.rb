@@ -1,5 +1,5 @@
 class CampaignsController < ApplicationController
-  skip_before_action :authenticate_user!
+  skip_before_action :authenticate_user!, only: [ :index, :show ]
   before_action :set_campaign, only: [ :show, :edit, :update, :destroy ]
 
 
@@ -13,12 +13,14 @@ class CampaignsController < ApplicationController
 
   def new
     @campaign = Campaign.new
+    @organization = Organization.find(params[:organization_id])
     authorize @campaign
   end
 
   def create
     @campaign = Campaign.new(campaign_params)
-    @campaign.user = current_user
+    @organization = Organization.find(params[:organization_id])
+    @campaign.organization = @organization
     authorize @campaign
     if @campaign.save
       redirect_to campaign_path(@campaign)
@@ -46,7 +48,7 @@ class CampaignsController < ApplicationController
   private
 
     def campaign_params
-      params.require(:campaign).permit(:sku, :name, :image_url, :price_cents, :price_currency)
+      params.require(:campaign).permit(:sku, :name, :camp_image, :price_cents, :price_currency)
     end
 
     def set_campaign

@@ -2,7 +2,7 @@
   <div class="row">
     <div class="wrapper">
       <div class="base-img">
-        <%= cl_image_tag @campaign.image_url, width: '70%' %>
+        <%= cl_image_tag @campaign.camp_image.url(:thumnail) %>
       </div>
       <div class="base-info">
         <div class="base-name">

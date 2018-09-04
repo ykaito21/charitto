@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
-  resources :organizations
-  resources :campaigns
+  resources :organizations do
+  resources :campaigns, only: [:new, :create, :edit, :update, :destroy]
+  end
+  resources :campaigns, only: [:index, :show]
   resources :orders, only: [:index, :show, :create] do
     resources :payments, only: [:new, :create]
   end
