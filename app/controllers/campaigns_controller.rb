@@ -42,7 +42,7 @@ class CampaignsController < ApplicationController
 
   def destroy
     @campaign.destroy
-    redirect_to root_path
+    redirect_to organization_path(@campaign.organization_id)
   end
 
   private
