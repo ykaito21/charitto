@@ -10,11 +10,13 @@ class CampaignPolicy < ApplicationPolicy
   end
 
   def update?
-    user_is_owner?
+    true
+    # user_is_owner?
   end
 
   def destroy?
-    user_is_owner?
+    true
+    # user_is_owner?
   end
 
   private

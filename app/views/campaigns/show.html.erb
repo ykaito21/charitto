@@ -7,6 +7,10 @@
       <div class="base-info">
         <div class="base-name">
           <%= @campaign.name %>
+          <% if policy(@campaign).update? %>
+            <%= link_to "変更 |", edit_campaign_path(@campaign), class: "" %>
+            <%= link_to "削除", campaign_path(@campaign), class: "", method: :delete, data: { confirm: "削除しますか？" }  %>
+          <% end %>
         </div>
         <div class="base-des">
           <p>Some awesome description.</p>
