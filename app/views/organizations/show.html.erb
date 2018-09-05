@@ -19,22 +19,24 @@
       </div>
     </div>
     <hr>
-    <% @organization.campaigns.each do |campaign| %>
-      <div class="col-xs-6 col-sm-4">
-        <%= link_to campaign_path(campaign) do %>
-        <div class="card">
-          <%= cl_image_tag(campaign.camp_image, class: "card-img") %>
-          <div class="card-content">
-            <h1 class="card-title"><%= campaign.name %></h1>
-            <p class="card-text"><%= campaign.name %></p>
+    <div class="cards">
+      <% @organization.campaigns.each do |campaign| %>
+        <!-- <div class="col-xs-6 col-sm-4"> -->
+          <%= link_to campaign_path(campaign) do %>
+          <div class="card">
+            <%= cl_image_tag(campaign.camp_image, class: "card-img") %>
+            <div class="card-content">
+              <h1 class="card-title"><%= campaign.name %></h1>
+              <p class="card-text"><%= campaign.name %></p>
+            </div>
+            <div class="card-link">
+              <%= link_to "詳しく", campaign_path(campaign), class: "btn btn-orange"  %>
+            </div>
           </div>
-          <div class="card-link">
-            <%= link_to "詳しく", campaign_path(campaign), class: "btn btn-orange"  %>
-          </div>
-        </div>
-        <% end %>
-      </div>
-    <% end %>
+          <% end %>
+        <!-- </div> -->
+      <% end %>
+    </div>
   </div>
 </div>
 
